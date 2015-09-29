@@ -1,0 +1,504 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7E4225561BBAF5E700386D9C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4225551BBAF5E700386D9C /* AppDelegate.swift */; };
+		7E4225581BBAF5E700386D9C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4225571BBAF5E700386D9C /* ViewController.swift */; };
+		7E42255B1BBAF5E700386D9C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E4225591BBAF5E700386D9C /* Main.storyboard */; };
+		7E42255D1BBAF5E700386D9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E42255C1BBAF5E700386D9C /* Assets.xcassets */; };
+		7E4225601BBAF5E700386D9C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E42255E1BBAF5E700386D9C /* LaunchScreen.storyboard */; };
+		7E42256B1BBAF5E700386D9C /* EpicListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E42256A1BBAF5E700386D9C /* EpicListTests.swift */; };
+		7E4225761BBAF5E700386D9C /* EpicListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4225751BBAF5E700386D9C /* EpicListUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7E4225671BBAF5E700386D9C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E42254A1BBAF5E600386D9C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7E4225511BBAF5E600386D9C;
+			remoteInfo = EpicList;
+		};
+		7E4225721BBAF5E700386D9C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E42254A1BBAF5E600386D9C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7E4225511BBAF5E600386D9C;
+			remoteInfo = EpicList;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7E4225521BBAF5E700386D9C /* EpicList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EpicList.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E4225551BBAF5E700386D9C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7E4225571BBAF5E700386D9C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7E42255A1BBAF5E700386D9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7E42255C1BBAF5E700386D9C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7E42255F1BBAF5E700386D9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7E4225611BBAF5E700386D9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7E4225661BBAF5E700386D9C /* EpicListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EpicListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E42256A1BBAF5E700386D9C /* EpicListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpicListTests.swift; sourceTree = "<group>"; };
+		7E42256C1BBAF5E700386D9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7E4225711BBAF5E700386D9C /* EpicListUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EpicListUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E4225751BBAF5E700386D9C /* EpicListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpicListUITests.swift; sourceTree = "<group>"; };
+		7E4225771BBAF5E700386D9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7E42254F1BBAF5E600386D9C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E4225631BBAF5E700386D9C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E42256E1BBAF5E700386D9C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7E4225491BBAF5E600386D9C = {
+			isa = PBXGroup;
+			children = (
+				7E4225541BBAF5E700386D9C /* EpicList */,
+				7E4225691BBAF5E700386D9C /* EpicListTests */,
+				7E4225741BBAF5E700386D9C /* EpicListUITests */,
+				7E4225531BBAF5E700386D9C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7E4225531BBAF5E700386D9C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7E4225521BBAF5E700386D9C /* EpicList.app */,
+				7E4225661BBAF5E700386D9C /* EpicListTests.xctest */,
+				7E4225711BBAF5E700386D9C /* EpicListUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7E4225541BBAF5E700386D9C /* EpicList */ = {
+			isa = PBXGroup;
+			children = (
+				7E4225551BBAF5E700386D9C /* AppDelegate.swift */,
+				7E4225571BBAF5E700386D9C /* ViewController.swift */,
+				7E4225591BBAF5E700386D9C /* Main.storyboard */,
+				7E42255C1BBAF5E700386D9C /* Assets.xcassets */,
+				7E42255E1BBAF5E700386D9C /* LaunchScreen.storyboard */,
+				7E4225611BBAF5E700386D9C /* Info.plist */,
+			);
+			path = EpicList;
+			sourceTree = "<group>";
+		};
+		7E4225691BBAF5E700386D9C /* EpicListTests */ = {
+			isa = PBXGroup;
+			children = (
+				7E42256A1BBAF5E700386D9C /* EpicListTests.swift */,
+				7E42256C1BBAF5E700386D9C /* Info.plist */,
+			);
+			path = EpicListTests;
+			sourceTree = "<group>";
+		};
+		7E4225741BBAF5E700386D9C /* EpicListUITests */ = {
+			isa = PBXGroup;
+			children = (
+				7E4225751BBAF5E700386D9C /* EpicListUITests.swift */,
+				7E4225771BBAF5E700386D9C /* Info.plist */,
+			);
+			path = EpicListUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7E4225511BBAF5E600386D9C /* EpicList */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7E42257A1BBAF5E700386D9C /* Build configuration list for PBXNativeTarget "EpicList" */;
+			buildPhases = (
+				7E42254E1BBAF5E600386D9C /* Sources */,
+				7E42254F1BBAF5E600386D9C /* Frameworks */,
+				7E4225501BBAF5E600386D9C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EpicList;
+			productName = EpicList;
+			productReference = 7E4225521BBAF5E700386D9C /* EpicList.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7E4225651BBAF5E700386D9C /* EpicListTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7E42257D1BBAF5E700386D9C /* Build configuration list for PBXNativeTarget "EpicListTests" */;
+			buildPhases = (
+				7E4225621BBAF5E700386D9C /* Sources */,
+				7E4225631BBAF5E700386D9C /* Frameworks */,
+				7E4225641BBAF5E700386D9C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7E4225681BBAF5E700386D9C /* PBXTargetDependency */,
+			);
+			name = EpicListTests;
+			productName = EpicListTests;
+			productReference = 7E4225661BBAF5E700386D9C /* EpicListTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		7E4225701BBAF5E700386D9C /* EpicListUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7E4225801BBAF5E700386D9C /* Build configuration list for PBXNativeTarget "EpicListUITests" */;
+			buildPhases = (
+				7E42256D1BBAF5E700386D9C /* Sources */,
+				7E42256E1BBAF5E700386D9C /* Frameworks */,
+				7E42256F1BBAF5E700386D9C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7E4225731BBAF5E700386D9C /* PBXTargetDependency */,
+			);
+			name = EpicListUITests;
+			productName = EpicListUITests;
+			productReference = 7E4225711BBAF5E700386D9C /* EpicListUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7E42254A1BBAF5E600386D9C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = Larissa;
+				TargetAttributes = {
+					7E4225511BBAF5E600386D9C = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					7E4225651BBAF5E700386D9C = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = 7E4225511BBAF5E600386D9C;
+					};
+					7E4225701BBAF5E700386D9C = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = 7E4225511BBAF5E600386D9C;
+					};
+				};
+			};
+			buildConfigurationList = 7E42254D1BBAF5E600386D9C /* Build configuration list for PBXProject "EpicList" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7E4225491BBAF5E600386D9C;
+			productRefGroup = 7E4225531BBAF5E700386D9C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7E4225511BBAF5E600386D9C /* EpicList */,
+				7E4225651BBAF5E700386D9C /* EpicListTests */,
+				7E4225701BBAF5E700386D9C /* EpicListUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7E4225501BBAF5E600386D9C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E4225601BBAF5E700386D9C /* LaunchScreen.storyboard in Resources */,
+				7E42255D1BBAF5E700386D9C /* Assets.xcassets in Resources */,
+				7E42255B1BBAF5E700386D9C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E4225641BBAF5E700386D9C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E42256F1BBAF5E700386D9C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7E42254E1BBAF5E600386D9C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E4225581BBAF5E700386D9C /* ViewController.swift in Sources */,
+				7E4225561BBAF5E700386D9C /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E4225621BBAF5E700386D9C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E42256B1BBAF5E700386D9C /* EpicListTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E42256D1BBAF5E700386D9C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E4225761BBAF5E700386D9C /* EpicListUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7E4225681BBAF5E700386D9C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7E4225511BBAF5E600386D9C /* EpicList */;
+			targetProxy = 7E4225671BBAF5E700386D9C /* PBXContainerItemProxy */;
+		};
+		7E4225731BBAF5E700386D9C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7E4225511BBAF5E600386D9C /* EpicList */;
+			targetProxy = 7E4225721BBAF5E700386D9C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7E4225591BBAF5E700386D9C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7E42255A1BBAF5E700386D9C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7E42255E1BBAF5E700386D9C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7E42255F1BBAF5E700386D9C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7E4225781BBAF5E700386D9C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7E4225791BBAF5E700386D9C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7E42257B1BBAF5E700386D9C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = EpicList/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = larissa.EpicList;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		7E42257C1BBAF5E700386D9C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = EpicList/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = larissa.EpicList;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		7E42257E1BBAF5E700386D9C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = EpicListTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = larissa.EpicListTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EpicList.app/EpicList";
+			};
+			name = Debug;
+		};
+		7E42257F1BBAF5E700386D9C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = EpicListTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = larissa.EpicListTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EpicList.app/EpicList";
+			};
+			name = Release;
+		};
+		7E4225811BBAF5E700386D9C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = EpicListUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = larissa.EpicListUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = EpicList;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		7E4225821BBAF5E700386D9C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = EpicListUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = larissa.EpicListUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = EpicList;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7E42254D1BBAF5E600386D9C /* Build configuration list for PBXProject "EpicList" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7E4225781BBAF5E700386D9C /* Debug */,
+				7E4225791BBAF5E700386D9C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7E42257A1BBAF5E700386D9C /* Build configuration list for PBXNativeTarget "EpicList" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7E42257B1BBAF5E700386D9C /* Debug */,
+				7E42257C1BBAF5E700386D9C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		7E42257D1BBAF5E700386D9C /* Build configuration list for PBXNativeTarget "EpicListTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7E42257E1BBAF5E700386D9C /* Debug */,
+				7E42257F1BBAF5E700386D9C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		7E4225801BBAF5E700386D9C /* Build configuration list for PBXNativeTarget "EpicListUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7E4225811BBAF5E700386D9C /* Debug */,
+				7E4225821BBAF5E700386D9C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7E42254A1BBAF5E600386D9C /* Project object */;
+}
