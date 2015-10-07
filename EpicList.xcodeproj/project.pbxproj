@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E2C959F1BC4A681009FB16B /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2C959E1BC4A681009FB16B /* Task.swift */; settings = {ASSET_TAGS = (); }; };
+		7E2C95A11BC4A784009FB16B /* Nivel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2C95A01BC4A784009FB16B /* Nivel.swift */; settings = {ASSET_TAGS = (); }; };
+		7E2C95A41BC4B0FB009FB16B /* Funcionalidade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2C95A31BC4B0FB009FB16B /* Funcionalidade.swift */; settings = {ASSET_TAGS = (); }; };
 		7E4225561BBAF5E700386D9C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4225551BBAF5E700386D9C /* AppDelegate.swift */; };
 		7E4225581BBAF5E700386D9C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4225571BBAF5E700386D9C /* ViewController.swift */; };
 		7E42255B1BBAF5E700386D9C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E4225591BBAF5E700386D9C /* Main.storyboard */; };
@@ -39,6 +42,9 @@
 /* Begin PBXFileReference section */
 		4039E26DE124DB6AB013B46B /* Pods_EpicList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EpicList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4974E11E72B5FFA582517913 /* Pods-EpicList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EpicList.release.xcconfig"; path = "Pods/Target Support Files/Pods-EpicList/Pods-EpicList.release.xcconfig"; sourceTree = "<group>"; };
+		7E2C959E1BC4A681009FB16B /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		7E2C95A01BC4A784009FB16B /* Nivel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Nivel.swift; sourceTree = "<group>"; };
+		7E2C95A31BC4B0FB009FB16B /* Funcionalidade.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Funcionalidade.swift; sourceTree = "<group>"; };
 		7E4225521BBAF5E700386D9C /* EpicList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EpicList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E4225551BBAF5E700386D9C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7E4225571BBAF5E700386D9C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -97,6 +103,24 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		7E2C959D1BC4A633009FB16B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7E92D6A21BC35BDB0001B2C1 /* Categoria.swift */,
+				7E2C959E1BC4A681009FB16B /* Task.swift */,
+				7E2C95A01BC4A784009FB16B /* Nivel.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		7E2C95A21BC4B0DA009FB16B /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				7E2C95A31BC4B0FB009FB16B /* Funcionalidade.swift */,
+			);
+			name = Enum;
+			sourceTree = "<group>";
+		};
 		7E4225491BBAF5E600386D9C = {
 			isa = PBXGroup;
 			children = (
@@ -122,13 +146,14 @@
 		7E4225541BBAF5E700386D9C /* EpicList */ = {
 			isa = PBXGroup;
 			children = (
+				7E2C95A21BC4B0DA009FB16B /* Enum */,
+				7E2C959D1BC4A633009FB16B /* Model */,
 				7E4225551BBAF5E700386D9C /* AppDelegate.swift */,
 				7E4225571BBAF5E700386D9C /* ViewController.swift */,
 				7E4225591BBAF5E700386D9C /* Main.storyboard */,
 				7E42255C1BBAF5E700386D9C /* Assets.xcassets */,
 				7E42255E1BBAF5E700386D9C /* LaunchScreen.storyboard */,
 				7E4225611BBAF5E700386D9C /* Info.plist */,
-				7E92D6A21BC35BDB0001B2C1 /* Categoria.swift */,
 			);
 			path = EpicList;
 			sourceTree = "<group>";
@@ -389,8 +414,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E2C959F1BC4A681009FB16B /* Task.swift in Sources */,
 				7E4225581BBAF5E700386D9C /* ViewController.swift in Sources */,
 				7E4225561BBAF5E700386D9C /* AppDelegate.swift in Sources */,
+				7E2C95A11BC4A784009FB16B /* Nivel.swift in Sources */,
+				7E2C95A41BC4B0FB009FB16B /* Funcionalidade.swift in Sources */,
 				7E92D6A31BC35BDB0001B2C1 /* Categoria.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
