@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B7875180AE7AFA56135171C1"
+               BlueprintIdentifier = "96B1FEA99F0D3E522038EBCE"
                BuildableName = "Pods_EpicListTests.framework"
                BlueprintName = "Pods-EpicListTests"
                ReferencedContainer = "container:Pods.xcodeproj">
