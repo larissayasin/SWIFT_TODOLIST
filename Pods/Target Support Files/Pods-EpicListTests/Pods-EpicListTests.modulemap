@@ -1,0 +1,6 @@
+framework module Pods_EpicListTests {
+  umbrella header "Pods-EpicListTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

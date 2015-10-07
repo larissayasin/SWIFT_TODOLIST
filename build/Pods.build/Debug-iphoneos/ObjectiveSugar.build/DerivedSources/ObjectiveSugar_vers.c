@@ -1,0 +1,1 @@
+ const unsigned char ObjectiveSugarVersionString[] __attribute__ ((used)) = "@(#)PROGRAM:ObjectiveSugar  PROJECT:Pods-0.9.0" "\n"; const double ObjectiveSugarVersionNumber __attribute__ ((used)) = (double)0.9;
