@@ -10,9 +10,6 @@ import RealmSwift
 
 class Categoria: Object {
     
-// Specify properties to ignore (Realm won't persist these)
-    
-//  override static func ignoredProperties() -> [String] {
-//    return []
-//  }
+    dynamic var descricao="";
+    dynamic var isRemoviver = false;
 }

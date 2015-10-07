@@ -1,0 +1,6 @@
+framework module Pods_EpicList {
+  umbrella header "Pods-EpicList-umbrella.h"
+
+  export *
+  module * { export * }
+}
