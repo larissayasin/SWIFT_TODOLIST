@@ -17,6 +17,7 @@
 		7E4225601BBAF5E700386D9C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E42255E1BBAF5E700386D9C /* LaunchScreen.storyboard */; };
 		7E42256B1BBAF5E700386D9C /* EpicListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E42256A1BBAF5E700386D9C /* EpicListTests.swift */; };
 		7E4225761BBAF5E700386D9C /* EpicListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4225751BBAF5E700386D9C /* EpicListUITests.swift */; };
+		7E65478E1BC72A5D009521C4 /* DBSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E65478D1BC72A5D009521C4 /* DBSet.swift */; settings = {ASSET_TAGS = (); }; };
 		7E92D6A31BC35BDB0001B2C1 /* Categoria.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E92D6A21BC35BDB0001B2C1 /* Categoria.swift */; settings = {ASSET_TAGS = (); }; };
 		D752B2A23FB6FF49527DC47F /* Pods_EpicListTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C136B419D03B4859AD713DC0 /* Pods_EpicListTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		D86CFB7DEFE550859E438CBE /* Pods_EpicList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4039E26DE124DB6AB013B46B /* Pods_EpicList.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -58,6 +59,7 @@
 		7E4225711BBAF5E700386D9C /* EpicListUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EpicListUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E4225751BBAF5E700386D9C /* EpicListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpicListUITests.swift; sourceTree = "<group>"; };
 		7E4225771BBAF5E700386D9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7E65478D1BC72A5D009521C4 /* DBSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBSet.swift; sourceTree = "<group>"; };
 		7E92D6A21BC35BDB0001B2C1 /* Categoria.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Categoria.swift; sourceTree = "<group>"; };
 		9522B5F929068DB51BC751E2 /* Pods-EpicListTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EpicListTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EpicListTests/Pods-EpicListTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C136B419D03B4859AD713DC0 /* Pods_EpicListTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EpicListTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -154,6 +156,7 @@
 				7E42255C1BBAF5E700386D9C /* Assets.xcassets */,
 				7E42255E1BBAF5E700386D9C /* LaunchScreen.storyboard */,
 				7E4225611BBAF5E700386D9C /* Info.plist */,
+				7E65478D1BC72A5D009521C4 /* DBSet.swift */,
 			);
 			path = EpicList;
 			sourceTree = "<group>";
@@ -420,6 +423,7 @@
 				7E2C95A11BC4A784009FB16B /* Nivel.swift in Sources */,
 				7E2C95A41BC4B0FB009FB16B /* Funcionalidade.swift in Sources */,
 				7E92D6A31BC35BDB0001B2C1 /* Categoria.swift in Sources */,
+				7E65478E1BC72A5D009521C4 /* DBSet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

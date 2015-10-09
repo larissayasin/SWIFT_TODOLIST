@@ -11,5 +11,5 @@ import RealmSwift
 class Categoria: Object {
     
     dynamic var descricao="";
-    dynamic var isRemoviver = false;
+    dynamic var isRemovivel = false;
 }
