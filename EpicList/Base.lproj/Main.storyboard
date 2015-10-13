@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="GEU-l1-Gf6">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--EpicList-->
@@ -131,9 +132,68 @@
                                     <navigationItem title="Adicionar" id="Uzr-8Z-VyV"/>
                                 </items>
                             </navigationBar>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="r1D-FY-gLG">
+                                <rect key="frame" x="20" y="95" width="560" height="361"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Titulo.." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="adQ-Ts-jl6">
+                                        <rect key="frame" x="0.0" y="0.0" width="66" height="30"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="kTj-Gw-e0S"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Descrição..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sNi-Ks-1bO">
+                                        <rect key="frame" x="0.0" y="30" width="98" height="30"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="GgN-75-gUP"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Categoria.." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XNI-Wh-gth">
+                                        <rect key="frame" x="0.0" y="60" width="92" height="30"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Data.." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BdW-QJ-DL3">
+                                        <rect key="frame" x="0.0" y="90" width="60" height="30"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AddIcon" translatesAutoresizingMaskIntoConstraints="NO" id="V8x-3k-1Vg">
+                                        <rect key="frame" x="0.0" y="120" width="560" height="241"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="240" id="xAS-8v-G3P"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="xAS-8v-G3P"/>
+                                            </mask>
+                                        </variation>
+                                    </imageView>
+                                </subviews>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstItem="XNI-Wh-gth" firstAttribute="height" secondItem="sNi-Ks-1bO" secondAttribute="height" id="QGF-1e-p8U"/>
+                                    <constraint firstItem="BdW-QJ-DL3" firstAttribute="height" secondItem="XNI-Wh-gth" secondAttribute="height" id="ucV-aU-qnb"/>
+                                    <constraint firstItem="V8x-3k-1Vg" firstAttribute="centerX" secondItem="r1D-FY-gLG" secondAttribute="centerX" id="yb1-Mx-obd"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="leadingMargin" secondItem="r1D-FY-gLG" secondAttribute="leading" id="0tr-Fy-EEd"/>
+                            <constraint firstItem="tn9-Vj-Kjw" firstAttribute="top" secondItem="r1D-FY-gLG" secondAttribute="bottom" constant="100" id="DQL-Z2-1jT"/>
+                            <constraint firstItem="r1D-FY-gLG" firstAttribute="top" secondItem="MYz-2h-vBt" secondAttribute="bottom" constant="31" id="MPY-Wj-HaY"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="r1D-FY-gLG" secondAttribute="trailing" id="ZmC-pU-ofN"/>
+                        </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="H7f-Am-x1E"/>
@@ -142,9 +202,21 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Adicionar" id="Lgq-tN-kqg">
-                        <barButtonItem key="rightBarButtonItem" title="Feito" id="KfL-Kq-o5g"/>
+                        <barButtonItem key="rightBarButtonItem" title="Feito" id="KfL-Kq-o5g">
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="show" identifier="feitosegue" id="hvC-ip-uAJ"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="btnFeito" destination="KfL-Kq-o5g" id="rKY-fe-4dN"/>
+                        <outlet property="imgAdd" destination="V8x-3k-1Vg" id="NJW-kS-BAu"/>
+                        <outlet property="txtCategoria" destination="XNI-Wh-gth" id="3qb-n2-hq0"/>
+                        <outlet property="txtData" destination="BdW-QJ-DL3" id="qLK-IT-RQg"/>
+                        <outlet property="txtDescricao" destination="sNi-Ks-1bO" id="J9j-aa-Hxx"/>
+                        <outlet property="txtTitulo" destination="adQ-Ts-jl6" id="Cu5-XP-zlc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="207-22-ngS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -170,4 +242,10 @@
             <point key="canvasLocation" x="186" y="344"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="AddIcon" width="64" height="64"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="hvC-ip-uAJ"/>
+    </inferredMetricsTieBreakers>
 </document>
