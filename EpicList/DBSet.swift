@@ -8,8 +8,11 @@
 
 import Foundation
 import RealmSwift
+
 class DBSet{
+    
     let realm = try! Realm()
+    
     func populateCategoria(){
         let cTrabalho = Categoria()
         cTrabalho.descricao = "Trabalho"
@@ -34,29 +37,23 @@ class DBSet{
         let nUm = Nivel()
         nUm.nroNivel = 1
         nUm.nroAtividades = 5
-       // nUm.funcionalidade = Funcionalidade.Foto
+        nUm.funcionalidade = Funcionalidade.Foto.rawValue
+        
+        let nDois = Nivel()
+        nDois.nroNivel = 2
+        nDois.nroAtividades = 5
+        nDois.funcionalidade = Funcionalidade.Email.rawValue
         
         
+        let nTres = Nivel()
+        nTres.nroNivel = 3
+        nTres.nroAtividades = 10
+        nTres.funcionalidade = Funcionalidade.Notificacao.rawValue
         
+        realm.write{
+            self.realm.add(nUm)
+            self.realm.add(nDois)
+            self.realm.add(nTres)
+        }
     }
 }
-/*
-
-private void populateNivel(){
-Realm realm = Realm.getDefaultInstance();
-realm.beginTransaction();
-Nivel nImagem = realm.createObject(Nivel.class);
-nImagem.setFuncionalidade(FuncionalidadeEnum.INCLUIR_FOTO.toString());
-nImagem.setNroNivel(2);
-nImagem.setNroAtividades(5);
-nImagem.setTexto("Agora você pode adicionar imagens a suas notas!");
-
-Nivel nCalendario = realm.createObject(Nivel.class);
-nCalendario.setFuncionalidade(FuncionalidadeEnum.ADICIONAR_CALENDARIO.toString());
-nCalendario.setNroNivel(3);
-nCalendario.setNroAtividades(10);
-nCalendario.setTexto("Agora você pode adicionar data a suas notas!");
-realm.commitTransaction();
-
-}
-*/
