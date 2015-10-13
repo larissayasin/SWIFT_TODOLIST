@@ -17,19 +17,19 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="L4N-4g-igx">
-                                <rect key="frame" x="0.0" y="64" width="600" height="80"/>
+                                <rect key="frame" x="5" y="69" width="590" height="75"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q0V-dN-7xT">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="30"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="q0V-dN-7xT">
+                                        <rect key="frame" x="0.0" y="0.0" width="590" height="25"/>
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Categoria..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Ga-BU-u9i">
-                                                <rect key="frame" x="0.0" y="0.0" width="528" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="514" height="25"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QCb-C2-DGq">
-                                                <rect key="frame" x="528" y="0.0" width="72" height="30"/>
+                                                <rect key="frame" x="518" y="0.0" width="72" height="25"/>
                                                 <animations/>
                                                 <state key="normal" title="Selecionar"/>
                                             </button>
@@ -53,18 +53,18 @@
                                         </variation>
                                     </stackView>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="orO-pu-PFV">
-                                        <rect key="frame" x="0.0" y="30" width="600" height="50"/>
+                                        <rect key="frame" x="0.0" y="25" width="590" height="50"/>
                                         <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="50" id="dLU-Z8-TBv"/>
                                         </constraints>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="vjS-Nq-Wlf">
-                                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="cell" selectionStyle="default" indentationWidth="10" id="vjS-Nq-Wlf">
+                                                <rect key="frame" x="0.0" y="28" width="590" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vjS-Nq-Wlf" id="l01-Qx-SYe">
-                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="590" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <animations/>
                                                 </tableViewCellContentView>
@@ -133,15 +133,15 @@
                             <constraint firstItem="L4N-4g-igx" firstAttribute="top" secondItem="xJo-4k-dzw" secondAttribute="top" constant="64" id="Jas-Z8-2FX"/>
                             <constraint firstItem="x1f-gu-g3R" firstAttribute="centerY" secondItem="xJo-4k-dzw" secondAttribute="centerY" id="NvI-fZ-PaV"/>
                             <constraint firstItem="nbT-x7-ZJs" firstAttribute="leading" secondItem="x1f-gu-g3R" secondAttribute="leading" id="POm-JI-0P8"/>
-                            <constraint firstItem="L4N-4g-igx" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="PqA-mn-vbM"/>
+                            <constraint firstItem="L4N-4g-igx" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="5" id="PqA-mn-vbM"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="L4N-4g-igx" secondAttribute="bottom" constant="456" id="R5M-O7-NT8"/>
                             <constraint firstItem="x1f-gu-g3R" firstAttribute="centerX" secondItem="xJo-4k-dzw" secondAttribute="centerX" id="Wus-kn-1eM"/>
                             <constraint firstItem="x1f-gu-g3R" firstAttribute="centerX" secondItem="xJo-4k-dzw" secondAttribute="centerX" id="g1V-FV-571"/>
                             <constraint firstItem="nbT-x7-ZJs" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="gUu-HX-yRg"/>
                             <constraint firstItem="x1f-gu-g3R" firstAttribute="centerY" secondItem="xJo-4k-dzw" secondAttribute="centerY" id="iW3-tG-ff2"/>
-                            <constraint firstItem="L4N-4g-igx" firstAttribute="leading" secondItem="xJo-4k-dzw" secondAttribute="leading" id="mua-q9-fTA"/>
+                            <constraint firstItem="L4N-4g-igx" firstAttribute="leading" secondItem="xJo-4k-dzw" secondAttribute="leading" constant="5" id="mua-q9-fTA"/>
                             <constraint firstItem="x1f-gu-g3R" firstAttribute="centerX" secondItem="xJo-4k-dzw" secondAttribute="centerX" id="tQo-nS-Saf"/>
-                            <constraint firstAttribute="trailing" secondItem="L4N-4g-igx" secondAttribute="trailing" id="uXK-Hd-ddC"/>
+                            <constraint firstAttribute="trailing" secondItem="L4N-4g-igx" secondAttribute="trailing" constant="5" id="uXK-Hd-ddC"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
@@ -153,12 +153,60 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="EpicList" id="tZ0-5P-vjX">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="5MP-Oa-elF"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="5MP-Oa-elF">
+                            <connections>
+                                <segue destination="UuW-uM-liM" kind="show" id="DOQ-9Q-NqR"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="btAdicionar" destination="5MP-Oa-elF" id="hsY-ue-220"/>
+                        <outlet property="btSelecionar" destination="QCb-C2-DGq" id="xf2-9g-cQY"/>
+                        <outlet property="tableview" destination="orO-pu-PFV" id="pbT-6H-7Kv"/>
+                        <outlet property="txtCategoria" destination="4Ga-BU-u9i" id="qP9-5E-P62"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="998" y="344"/>
+        </scene>
+        <!--Adicionar-->
+        <scene sceneID="CfU-cc-PxO">
+            <objects>
+                <viewController id="UuW-uM-liM" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MYz-2h-vBt"/>
+                        <viewControllerLayoutGuide type="bottom" id="tn9-Vj-Kjw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="I5Y-xo-GQT">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H7f-Am-x1E">
+                                <rect key="frame" x="-20" y="155" width="600" height="44"/>
+                                <animations/>
+                                <items>
+                                    <navigationItem title="Adicionar" id="Uzr-8Z-VyV"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="H7f-Am-x1E"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Adicionar" id="Lgq-tN-kqg">
+                        <barButtonItem key="rightBarButtonItem" title="Feito" id="KfL-Kq-o5g"/>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="207-22-ngS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1688" y="355"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3Oq-c9-4NN">
