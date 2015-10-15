@@ -13,10 +13,10 @@
 		7E4225561BBAF5E700386D9C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4225551BBAF5E700386D9C /* AppDelegate.swift */; };
 		7E4225581BBAF5E700386D9C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4225571BBAF5E700386D9C /* ViewController.swift */; };
 		7E42255B1BBAF5E700386D9C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E4225591BBAF5E700386D9C /* Main.storyboard */; };
-		7E42255D1BBAF5E700386D9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E42255C1BBAF5E700386D9C /* Assets.xcassets */; };
 		7E4225601BBAF5E700386D9C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E42255E1BBAF5E700386D9C /* LaunchScreen.storyboard */; };
 		7E42256B1BBAF5E700386D9C /* EpicListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E42256A1BBAF5E700386D9C /* EpicListTests.swift */; };
 		7E4225761BBAF5E700386D9C /* EpicListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4225751BBAF5E700386D9C /* EpicListUITests.swift */; };
+		7E5FACBC1BCF4E1E00D0B686 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E5FACBB1BCF4E1E00D0B686 /* Assets.xcassets */; settings = {ASSET_TAGS = (); }; };
 		7E65478E1BC72A5D009521C4 /* DBSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E65478D1BC72A5D009521C4 /* DBSet.swift */; settings = {ASSET_TAGS = (); }; };
 		7E6B85011BCC7F9E0066E1AB /* UserSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6B85001BCC7F9E0066E1AB /* UserSet.swift */; settings = {ASSET_TAGS = (); }; };
 		7E7B07391BCDAD8000EE112D /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7B07381BCDAD8000EE112D /* AddTaskViewController.swift */; settings = {ASSET_TAGS = (); }; };
@@ -52,7 +52,6 @@
 		7E4225551BBAF5E700386D9C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7E4225571BBAF5E700386D9C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7E42255A1BBAF5E700386D9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		7E42255C1BBAF5E700386D9C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7E42255F1BBAF5E700386D9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7E4225611BBAF5E700386D9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7E4225661BBAF5E700386D9C /* EpicListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EpicListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,6 +60,7 @@
 		7E4225711BBAF5E700386D9C /* EpicListUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EpicListUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E4225751BBAF5E700386D9C /* EpicListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpicListUITests.swift; sourceTree = "<group>"; };
 		7E4225771BBAF5E700386D9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7E5FACBB1BCF4E1E00D0B686 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7E65478D1BC72A5D009521C4 /* DBSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBSet.swift; sourceTree = "<group>"; };
 		7E6B85001BCC7F9E0066E1AB /* UserSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSet.swift; sourceTree = "<group>"; };
 		7E7B07381BCDAD8000EE112D /* AddTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
@@ -159,8 +159,8 @@
 				7E7B07381BCDAD8000EE112D /* AddTaskViewController.swift */,
 				7E4225571BBAF5E700386D9C /* ViewController.swift */,
 				7E4225591BBAF5E700386D9C /* Main.storyboard */,
-				7E42255C1BBAF5E700386D9C /* Assets.xcassets */,
 				7E42255E1BBAF5E700386D9C /* LaunchScreen.storyboard */,
+				7E5FACBB1BCF4E1E00D0B686 /* Assets.xcassets */,
 				7E4225611BBAF5E700386D9C /* Info.plist */,
 			);
 			path = EpicList;
@@ -312,7 +312,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E4225601BBAF5E700386D9C /* LaunchScreen.storyboard in Resources */,
-				7E42255D1BBAF5E700386D9C /* Assets.xcassets in Resources */,
+				7E5FACBC1BCF4E1E00D0B686 /* Assets.xcassets in Resources */,
 				7E42255B1BBAF5E700386D9C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

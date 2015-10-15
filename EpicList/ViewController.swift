@@ -15,15 +15,17 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var btSelecionar: UIButton!
     @IBOutlet weak var txtCategoria: UITextField!
     @IBOutlet weak var btAdicionar: UIBarButtonItem!
+    @IBOutlet weak var progressView: UIProgressView!
     
     var realm: Realm!
-    var tarefas: Results<Task>?
+    var tarefas = [Task]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         realm = try! Realm()
-        tarefas = realm.objects(Task)
-       
+        let   tarefasArray = realm.objects(Task).map { $0 }
+        tarefas = tarefasArray
+        
         tableview.delegate = self
         tableview.dataSource = self
     }
@@ -56,7 +58,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tarefas!.count
+        return tarefas.count
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cellFrame = CGRectMake(0, 0, self.tableview.frame.width, 52.0)
@@ -64,12 +66,64 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         let textLabel = UILabel(frame: CGRectMake(10.0, 0.0, UIScreen.mainScreen().bounds.width - 20.0, 52.0 - 4.0))
         textLabel.textColor = UIColor.blackColor()
-        //  textLabel.text = tarefas[indexPath.row].titulo
+        textLabel.text = tarefas[indexPath.row].titulo
         retCell.addSubview(textLabel)
         
         return retCell
+    }
+    func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
+        let done = UITableViewRowAction(style: .Normal, title: "Feito") { action, index in
+            print("more button tapped")
+        }
+        done.backgroundColor = UIColor.greenColor()
+        
+        
+        let delete = UITableViewRowAction(style: .Default, title: "Excluir") { action, index in
+            self.deleteTask(indexPath.row)
+        }
+        delete.backgroundColor = UIColor.redColor()
+        
+        return [done, delete]
+    }
+    
+    
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        // the cells you would like the actions to appear needs to be editable
+        return true
+    }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        // you need to implement this method too or you can't swipe to display the actions
+    }
+    
+    func deleteTask(pos : Int){
+        let task = tarefas[pos]
+        try! realm.write {
+            self.realm.delete(task)
+        }
+        let   tarefasArray = realm.objects(Task).map { $0 }
+        tarefas = tarefasArray
         
     }
+    
+    func doTask(pos : Int){
+        let task = tarefas[pos]
+        try! realm.write {
+            self.realm.delete(task)
+        }
+        let tarefasArray = realm.objects(Task).map { $0 }
+        tarefas = tarefasArray
+        
+//        let uSet =        UserSet()
+//        let level = uSet.getUserLevel()
+//        let progresso = uSet.getUserProgress()
+       //busca nivel no realm nroNivel
+        //verifica nroTarefas com o progresso
+        //Se for maior ou igual sobe de nivel e zera o progresso
+        //se nao, add +1 no progresso
+        // if(leve)
+    }
+    
     
 }
 

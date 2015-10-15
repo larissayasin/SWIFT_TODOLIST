@@ -11,9 +11,10 @@ import RealmSwift
 
 class DBSet{
     
-    let realm = try! Realm()
+    //var realm = try! Realm()
     
-    func populateCategoria(){
+    func populateCategoria() throws{
+        let realm = try! Realm()
         let cTrabalho = Categoria()
         cTrabalho.descricao = "Trabalho"
         cTrabalho.isRemovivel = false
@@ -26,14 +27,15 @@ class DBSet{
         cVida.descricao = "Vida"
         cVida.isRemovivel = false
         
-        realm.write{
-            self.realm.add(cTrabalho)
-            self.realm.add(cSaude)
-            self.realm.add(cVida)
+       try realm.write{
+            realm.add(cTrabalho)
+            realm.add(cSaude)
+            realm.add(cVida)
         }
     }
     
-    func populateNivel(){
+    func populateNivel() throws{
+        let realm = try! Realm()
         let nUm = Nivel()
         nUm.nroNivel = 1
         nUm.nroAtividades = 5
@@ -50,10 +52,10 @@ class DBSet{
         nTres.nroAtividades = 10
         nTres.funcionalidade = Funcionalidade.Notificacao.rawValue
         
-        realm.write{
-            self.realm.add(nUm)
-            self.realm.add(nDois)
-            self.realm.add(nTres)
+       try realm.write{
+            realm.add(nUm)
+            realm.add(nDois)
+            realm.add(nTres)
         }
     }
 }
