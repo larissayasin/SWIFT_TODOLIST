@@ -20,7 +20,9 @@ class AddTaskViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet weak var btnFeito: UIBarButtonItem!
     
     @IBOutlet weak var btEmail: UIButton!
+    @IBOutlet weak var notificacaoStack: UIStackView!
     
+    @IBOutlet weak var switchNotificacao: UISwitch!
     var realm: Realm!
     var userSet: UserSet!
     var isEdit = false
@@ -31,11 +33,20 @@ class AddTaskViewController: UIViewController, UIImagePickerControllerDelegate, 
         super.viewDidLoad()
         realm = try! Realm()
         userSet = UserSet()
-        //        let predicate = NSPredicate(format: "nroNivel = %@", userSet.getUserLevel())
-        //        let funcionalidade = realm.objects(Nivel).filter(predicate).first
+
         if(userSet.getUserLevel() == 0){
             photoImageView.hidden = true
             btEmail.hidden = true
+            notificacaoStack.hidden = true
+        }
+        if(userSet.getUserLevel() == 1){
+             photoImageView.hidden = false
+        }
+        if(userSet.getUserLevel() == 2){
+            notificacaoStack.hidden = false
+        }
+        if(userSet.getUserLevel() == 3){
+            btEmail.hidden = false
         }
     }
     

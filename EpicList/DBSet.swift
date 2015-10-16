@@ -27,7 +27,7 @@ class DBSet{
         cVida.descricao = "Vida"
         cVida.isRemovivel = false
         
-       try! realm.write{
+        try! realm.write{
             realm.add(cTrabalho)
             realm.add(cSaude)
             realm.add(cVida)
@@ -36,6 +36,10 @@ class DBSet{
     
     func populateNivel(){
         let realm = try! Realm()
+        let nZero = Nivel()
+        nZero.nroNivel = 0
+        nZero.nroAtividades = 1
+        
         let nUm = Nivel()
         nUm.nroNivel = 1
         nUm.nroAtividades = 5
@@ -52,7 +56,8 @@ class DBSet{
         nTres.nroAtividades = 10
         nTres.funcionalidade = Funcionalidade.Notificacao.rawValue
         
-       try! realm.write{
+        try! realm.write{
+            realm.add(nZero)
             realm.add(nUm)
             realm.add(nDois)
             realm.add(nTres)

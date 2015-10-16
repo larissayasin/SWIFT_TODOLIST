@@ -19,12 +19,21 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     var realm: Realm!
     var tarefas = [Task]()
+    var userSet: UserSet!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         realm = try! Realm()
+        userSet = UserSet()
+        
         let   tarefasArray = realm.objects(Task).map { $0 }
         tarefas = tarefasArray
+        let nivelProgresso = userSet.getUserLevel()+1
+        let predicate = NSPredicate(format: "nroNivel = %i", nivelProgresso)
+        let level = realm.objects(Nivel).filter(predicate)
+        let progressoTotal = level[0].nroAtividades
+        let progressFloat = Float(userSet.getUserProgress())/Float(progressoTotal)
+        progressView.setProgress(progressFloat, animated: true)
         
         tableview.delegate = self
         tableview.dataSource = self
@@ -42,15 +51,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
         tableview.deselectRowAtIndexPath(indexPath, animated: true)
-    }
-    
-    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat
-    {
-        if section == 0
-        {	return 64.0
-        }
-        
-        return 32.0
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -73,13 +73,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
         let done = UITableViewRowAction(style: .Normal, title: "Feito") { action, index in
-            print("more button tapped")
+            self.doTask(indexPath.row)
+            print("done button tapped")
         }
         done.backgroundColor = UIColor.greenColor()
         
         
         let delete = UITableViewRowAction(style: .Default, title: "Excluir") { action, index in
             self.deleteTask(indexPath.row)
+            print("delete button tapped")
         }
         delete.backgroundColor = UIColor.redColor()
         
@@ -103,25 +105,35 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
         let   tarefasArray = realm.objects(Task).map { $0 }
         tarefas = tarefasArray
+        self.viewDidLoad()
         
     }
     
     func doTask(pos : Int){
-        let task = tarefas[pos]
-        try! realm.write {
-            self.realm.delete(task)
-        }
         let tarefasArray = realm.objects(Task).map { $0 }
         tarefas = tarefasArray
-        
-//        let uSet =        UserSet()
-//        let level = uSet.getUserLevel()
-//        let progresso = uSet.getUserProgress()
-       //busca nivel no realm nroNivel
-        //verifica nroTarefas com o progresso
-        //Se for maior ou igual sobe de nivel e zera o progresso
-        //se nao, add +1 no progresso
-        // if(leve)
+        let predicate = NSPredicate(format: "nroNivel = %i", userSet.getUserLevel()+1)
+        let level = realm.objects(Nivel).filter(predicate)
+        if(level.count>0){
+            var nroAtividades = level[0].nroAtividades
+            userSet.changeUserProgress(userSet.getUserProgress()+1)
+            if(userSet.getUserProgress() >= nroAtividades){
+                userSet.changeUserProgress(0)
+                userSet.changeUserLevel(userSet.getUserLevel()+1)
+                let predicate2 = NSPredicate(format: "nroNivel = %i", userSet.getUserLevel()+1)
+                let level2 = realm.objects(Nivel).filter(predicate2)
+                nroAtividades = level2[0].nroAtividades
+            }
+          
+            let task = tarefas[pos]
+            try! realm.write {
+                self.realm.delete(task)
+            }
+            self.tableview.reloadData()
+            let progresso = Float(userSet.getUserProgress())/Float(nroAtividades)
+            self.progressView.setProgress(progresso, animated: true)
+            // progressView.setProgress(<#T##progress: Float##Float#>, animated: <#T##Bool#>)
+        }
     }
     
     

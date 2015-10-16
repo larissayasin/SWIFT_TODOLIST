@@ -13,9 +13,9 @@ class Task: Object {
     dynamic var id = 0
     dynamic var titulo = ""
     dynamic var descricao = ""
-    dynamic var imagem = ""
+    dynamic var imagem:NSString?
     dynamic var categoria : Categoria?
-    dynamic var data = NSDate()
+    dynamic var data: NSDate?
     
     override static func primaryKey() -> String? {
         return "id"
