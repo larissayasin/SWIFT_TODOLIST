@@ -212,6 +212,9 @@
                                             <constraint firstAttribute="height" constant="30" id="x1w-4K-oAD"/>
                                         </constraints>
                                         <state key="normal" title="Enviar Email"/>
+                                        <connections>
+                                            <action selector="sendEmail:" destination="UuW-uM-liM" eventType="touchDown" id="ns6-PG-WgI"/>
+                                        </connections>
                                     </button>
                                     <imageView hidden="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="o00-Qc-jRy">
                                         <rect key="frame" x="0.0" y="499" width="0.0" height="0.0"/>

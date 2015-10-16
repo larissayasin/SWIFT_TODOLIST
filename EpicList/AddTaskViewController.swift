@@ -8,26 +8,26 @@
 
 import UIKit
 import RealmSwift
+import MessageUI
 
-class AddTaskViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+class AddTaskViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, MFMailComposeViewControllerDelegate{
     
     @IBOutlet weak var txtTitulo: UITextField!
     @IBOutlet weak var txtDescricao: UITextField!
     @IBOutlet weak var txtCategoria: UITextField!
     @IBOutlet weak var txtData: UITextField!
     @IBOutlet weak var photoImageView: UIImageView!
-
     @IBOutlet weak var btnFeito: UIBarButtonItem!
-    
     @IBOutlet weak var btEmail: UIButton!
     @IBOutlet weak var notificacaoStack: UIStackView!
-    
     @IBOutlet weak var switchNotificacao: UISwitch!
+    
     var realm: Realm!
     var userSet: UserSet!
     var isEdit = false
     var dateSelected = NSDate()
     var tarefa = Task()
+    var tarefaID = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,7 +53,7 @@ class AddTaskViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBAction func setDatePicker(sender: UITextField) {
         let datePickerView:UIDatePicker = UIDatePicker()
         
-        datePickerView.datePickerMode = UIDatePickerMode.Date
+        datePickerView.datePickerMode = UIDatePickerMode.DateAndTime
         
         sender.inputView = datePickerView
         
@@ -71,7 +71,9 @@ class AddTaskViewController: UIViewController, UIImagePickerControllerDelegate, 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?){
         if segue.identifier == "feitosegue"
         {
-            try! salvarTarefa()
+            if(tarefaID == 0){
+                try! salvarTarefa()
+            }
         }
     }
     
@@ -130,6 +132,35 @@ class AddTaskViewController: UIViewController, UIImagePickerControllerDelegate, 
         
         presentViewController(imagePickerController, animated: true, completion: nil)
     }
-
+    
+    @IBAction func sendEmail(sender: AnyObject) {
+        let mailComposeViewController = configuredMailComposeViewController()
+        if MFMailComposeViewController.canSendMail() {
+            self.presentViewController(mailComposeViewController, animated: true, completion: nil)
+        } else {
+            self.showSendMailErrorAlert()
+        }
+    }
+    func configuredMailComposeViewController() -> MFMailComposeViewController {
+        let mailComposerVC = MFMailComposeViewController()
+        mailComposerVC.mailComposeDelegate = self // Extremely important to set the --mailComposeDelegate-- property, NOT the --delegate-- property
+        
+        mailComposerVC.setSubject(tarefa.titulo)
+        mailComposerVC.setMessageBody(tarefa.description, isHTML: false)
+        
+        return mailComposerVC
+    }
+    
+    func showSendMailErrorAlert() {
+        let sendMailErrorAlert = UIAlertView(title: "Could Not Send Email", message: "Your device could not send e-mail.  Please check e-mail configuration and try again.", delegate: self, cancelButtonTitle: "OK")
+        sendMailErrorAlert.show()
+    }
+    
+    // MARK: MFMailComposeViewControllerDelegate
+    
+    func mailComposeController(controller: MFMailComposeViewController!, didFinishWithResult result: MFMailComposeResult, error: NSError!) {
+        controller.dismissViewControllerAnimated(true, completion: nil)
+        
+    }
     
 }
