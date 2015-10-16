@@ -20,6 +20,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     var realm: Realm!
     var tarefas = [Task]()
     var userSet: UserSet!
+    var chosenCellIndex = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,7 +51,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
-        tableview.deselectRowAtIndexPath(indexPath, animated: true)
+        performSegueWithIdentifier("cellsegue", sender: nil)
+        chosenCellIndex = indexPath.row
+    }
+    
+    func transition(Sender: UIButton!) {
+        let secondViewController:AddTaskViewController = AddTaskViewController()
+        
+        self.presentViewController(secondViewController, animated: true, completion: nil)
+        
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -105,13 +114,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
         let   tarefasArray = realm.objects(Task).map { $0 }
         tarefas = tarefasArray
-        self.viewDidLoad()
+        self.tableview.reloadData()
         
     }
     
     func doTask(pos : Int){
-        let tarefasArray = realm.objects(Task).map { $0 }
-        tarefas = tarefasArray
         let predicate = NSPredicate(format: "nroNivel = %i", userSet.getUserLevel()+1)
         let level = realm.objects(Nivel).filter(predicate)
         if(level.count>0){
@@ -123,19 +130,41 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 let predicate2 = NSPredicate(format: "nroNivel = %i", userSet.getUserLevel()+1)
                 let level2 = realm.objects(Nivel).filter(predicate2)
                 nroAtividades = level2[0].nroAtividades
+                showAlert()
             }
-          
+            
             let task = tarefas[pos]
             try! realm.write {
                 self.realm.delete(task)
             }
+            let tarefasArray = realm.objects(Task).map { $0 }
+            tarefas = tarefasArray
             self.tableview.reloadData()
             let progresso = Float(userSet.getUserProgress())/Float(nroAtividades)
             self.progressView.setProgress(progresso, animated: true)
-            // progressView.setProgress(<#T##progress: Float##Float#>, animated: <#T##Bool#>)
         }
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if (segue.identifier == "cellsegue") {
+            let svc = segue.destinationViewController as! AddTaskViewController
+            svc.tarefa = tarefas[chosenCellIndex]
+            svc.edit = true
+        }
+    }
     
+    func showAlert(){
+        let alertController = UIAlertController(title: "Hey!", message: "Você subiu de nível!!", preferredStyle: .Alert)
+        
+        let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+        alertController.addAction(defaultAction)
+        
+        presentViewController(alertController, animated: true, completion: nil)
+    }
+    override func viewDidAppear(animated: Bool) {
+        let   tarefasArray = realm.objects(Task).map { $0 }
+        tarefas = tarefasArray
+        self.tableview.reloadData()
+    }
 }
 

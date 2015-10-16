@@ -12,7 +12,7 @@ class UserSet {
     let level = "nivel"
     static let intialProgress = 0
     let progress = "progresso"
-
+    
     func changeUserLevel(nivel : Int){
         let prefs = NSUserDefaults.standardUserDefaults()
         prefs.setValue(nivel, forKey: level)
@@ -35,5 +35,11 @@ class UserSet {
         return progresso
     }
     
-    
+    func nextPKTask()->Int{
+        let prefs = NSUserDefaults.standardUserDefaults()
+        let pk = prefs.integerForKey("PKTask")
+        let pkNew = pk + 1
+        prefs.setValue(pkNew, forKey: "PKTask")
+        return pkNew
+    }
 }

@@ -17,36 +17,41 @@ class AddTaskViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet weak var txtCategoria: UITextField!
     @IBOutlet weak var txtData: UITextField!
     @IBOutlet weak var photoImageView: UIImageView!
-    @IBOutlet weak var btnFeito: UIBarButtonItem!
     @IBOutlet weak var btEmail: UIButton!
     @IBOutlet weak var notificacaoStack: UIStackView!
     @IBOutlet weak var switchNotificacao: UISwitch!
+    @IBOutlet weak var btFeito: UIButton!
     
     var realm: Realm!
     var userSet: UserSet!
-    var isEdit = false
     var dateSelected = NSDate()
     var tarefa = Task()
-    var tarefaID = 0
+    var edit = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         realm = try! Realm()
         userSet = UserSet()
-
+        
+        if(edit == true){
+            txtTitulo.text = tarefa.titulo
+            txtDescricao.text = tarefa.descricao
+            if(tarefa.data != nil){
+                let dateFormatter = NSDateFormatter()
+                dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
+                dateFormatter.timeStyle = NSDateFormatterStyle.NoStyle
+                txtData.text = dateFormatter.stringFromDate(tarefa.data!)
+            }
+            txtCategoria.text = tarefa.categoria?.descricao
+            if(tarefa.imagem != nil){
+                photoImageView.image = loadImageFromPath(tarefa.imagem!)
+            }
+        }
+        
         if(userSet.getUserLevel() == 0){
-            photoImageView.hidden = true
-            btEmail.hidden = true
-            notificacaoStack.hidden = true
-        }
-        if(userSet.getUserLevel() == 1){
-             photoImageView.hidden = false
-        }
-        if(userSet.getUserLevel() == 2){
-            notificacaoStack.hidden = false
-        }
-        if(userSet.getUserLevel() == 3){
-            btEmail.hidden = false
+            btEmail.enabled = false
+        }else  if(userSet.getUserLevel() == 3){
+            btEmail.enabled = true
         }
     }
     
@@ -69,33 +74,45 @@ class AddTaskViewController: UIViewController, UIImagePickerControllerDelegate, 
         
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?){
-        if segue.identifier == "feitosegue"
-        {
-            if(tarefaID == 0){
-                try! salvarTarefa()
-            }
-        }
+        salvarTarefa()
     }
     
-    func salvarTarefa() throws{
+    @IBAction func doneClick(sender: AnyObject) {
+        salvarTarefa()
+        self.dismissViewControllerAnimated(false, completion: nil)
+        
+        let alertController = UIAlertController(title: "Hey!", message: "Você adicionou uma tarefa", preferredStyle: .Alert)
+        
+        let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+        alertController.addAction(defaultAction)
+        
+        presentViewController(alertController, animated: true, completion: nil)
+    }
+    
+    func salvarTarefa(){
         let predicate = NSPredicate(format: "descricao = %@", txtDescricao.text!)
         let categorias = realm.objects(Categoria).filter(predicate)
-        
-        tarefa.titulo = txtTitulo.text!
-        tarefa.descricao = txtDescricao.text!
-        if(categorias.count == 0){
-            let categoria = Categoria()
-            categoria.descricao = txtCategoria.text!
-            categoria.isRemovivel = true
-            try  realm.write{
+        try! realm.write{
+            self.tarefa.titulo = self.txtTitulo.text!
+            self.tarefa.descricao = self.txtDescricao.text!
+            if(categorias.count == 0){
+                let categoria = Categoria()
+                categoria.descricao = self.txtCategoria.text!
+                categoria.isRemovivel = true
+                
                 self.realm.add(categoria)
+                
+                self.tarefa.categoria = categoria
+            }else{
+                self.tarefa.categoria = categorias.first
             }
-            tarefa.categoria = categoria
-        }else{
-            tarefa.categoria = categorias.first
-        }
-        try realm.write{
-            self.realm.add(self.tarefa)
+            if(self.edit == true){
+                self.realm.add(self.tarefa, update:true)
+                
+            }else{
+                self.tarefa.id = self.userSet.nextPKTask()
+                self.realm.add(self.tarefa)
+            }
         }
     }
     
@@ -111,7 +128,6 @@ class AddTaskViewController: UIViewController, UIImagePickerControllerDelegate, 
         
         // Set photoImageView to display the selected image.
         photoImageView.image = selectedImage
-        
         // Dismiss the picker.
         dismissViewControllerAnimated(true, completion: nil)
     }
@@ -119,7 +135,11 @@ class AddTaskViewController: UIViewController, UIImagePickerControllerDelegate, 
     // MARK: Actions
     @IBAction func selectImageFromPhotoLibrary(sender: UITapGestureRecognizer) {
         // Hide the keyboard.
-      //  nameTextField.resignFirstResponder()
+        //  nameTextField.resignFirstResponder()
+        if(userSet.getUserLevel() < 1){
+            showAlert()
+            return
+        }
         
         // UIImagePickerController is a view controller that lets a user pick media from their photo library.
         let imagePickerController = UIImagePickerController()
@@ -133,7 +153,20 @@ class AddTaskViewController: UIViewController, UIImagePickerControllerDelegate, 
         presentViewController(imagePickerController, animated: true, completion: nil)
     }
     
+    func showAlert(){
+        let alertController = UIAlertController(title: "Hey!", message: "Você ainda não chegou no nível necessário", preferredStyle: .Alert)
+        
+        let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+        alertController.addAction(defaultAction)
+        
+        presentViewController(alertController, animated: true, completion: nil)
+    }
+    
     @IBAction func sendEmail(sender: AnyObject) {
+        if(userSet.getUserLevel() < 3){
+            showAlert()
+            return
+        }
         let mailComposeViewController = configuredMailComposeViewController()
         if MFMailComposeViewController.canSendMail() {
             self.presentViewController(mailComposeViewController, animated: true, completion: nil)
@@ -158,8 +191,18 @@ class AddTaskViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     // MARK: MFMailComposeViewControllerDelegate
     
-    func mailComposeController(controller: MFMailComposeViewController!, didFinishWithResult result: MFMailComposeResult, error: NSError!) {
+    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
         controller.dismissViewControllerAnimated(true, completion: nil)
+        
+    }
+    
+    func loadImageFromPath(path: String) -> UIImage? {
+        let image = UIImage(contentsOfFile: path)
+        if image == nil {
+            print("missing image at: (path)")
+        }
+        print("(path)")
+        return image
         
     }
     

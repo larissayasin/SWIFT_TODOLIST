@@ -13,7 +13,7 @@ class Task: Object {
     dynamic var id = 0
     dynamic var titulo = ""
     dynamic var descricao = ""
-    dynamic var imagem:NSString?
+    dynamic var imagem:String?
     dynamic var categoria : Categoria?
     dynamic var data: NSDate?
     
